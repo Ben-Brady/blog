@@ -1,0 +1,21 @@
+var store = [{
+        "title": "An Ode to Try Except Else",
+        "excerpt":"Python has the ability to add an else clause during error handling. It allows you to not have to use a return statement in the catch block so it can look neater and convey your meaning more For instance, I wanted to login and redirect to home I wrote this....","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/An-Ode-To-Try-Except-Else/"
+      },{
+        "title": "Pattern - Conditional Towers",
+        "excerpt":"A common pattern in code is the use of a conditional tower to isolate an selection process into it’s own function. def get_tax_rate(income: int) -&gt; int: if income &lt; 12_570: return 0 elif income &lt; 50_270: return 20 elif income &lt; 150_000: return 40 else: return 50A conditional tower allows...","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/Conditional-Towers/"
+      },{
+        "title": "Function Length Trade-Offs",
+        "excerpt":"My stance on code splitting has changed over the years. I orinally wrote long unreadable functions like most devs, however after getting and reading Uncle Bob’s book Whether or not it’s important to see the logic or implementation Say you have a long function, common practice dictates that you should...","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/Function-Length-Trade-Offs/"
+      },{
+        "title": "Openbooru",
+        "excerpt":"Openbooru is a modern implementation of a booru written in Sveltekit and Python. I orinally wanted to create a modern framework for boorus. A booru is a imageboard that can be searched with through tags, this is often used to showcase Fan-art. In the mid-2000s, the competition in this area...","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/projects/openbooru/"
+      }]

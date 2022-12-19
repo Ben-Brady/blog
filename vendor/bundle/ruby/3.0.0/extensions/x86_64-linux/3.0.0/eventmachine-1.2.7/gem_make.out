@@ -1,0 +1,16 @@
+current directory: /home/ben/MEGA/code/websites/blog/myblog/vendor/bundle/ruby/3.0.0/gems/eventmachine-1.2.7/ext/fastfilereader
+/usr/bin/ruby3.0 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20221219-142597-n2qmqe.rb extconf.rb
+creating Makefile
+
+current directory: /home/ben/MEGA/code/websites/blog/myblog/vendor/bundle/ruby/3.0.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= clean
+
+current directory: /home/ben/MEGA/code/websites/blog/myblog/vendor/bundle/ruby/3.0.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\=
+compiling mapper.cpp
+compiling rubymain.cpp
+linking shared-object fastfilereaderext.so
+
+current directory: /home/ben/MEGA/code/websites/blog/myblog/vendor/bundle/ruby/3.0.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 fastfilereaderext.so ./.gem.20221219-142597-ylnkop

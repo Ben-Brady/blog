@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.2.0
+    Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    <title>Pattern - Conditional Towers</title>
+    <meta name="description" content="A common pattern in code is the use of a conditional tower to isolate an selection process into it’s own function.">
+    <link rel="canonical" href="http://localhost:4000/Conditional-Towers/">
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/skins/dark.css">
+  <link rel="alternate" type="application/atom+xml" title="Ben&#39;s Coding Blog" href="/feed.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  pattern-conditional-towers">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/">Home</a></li><li><a href="/projects">Projects</a></li><li><a href="/portfolio">Portfolio</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+      <a href="/" class="site-logo" rel="home" title="Ben's Coding Blog">
+        <img src="/images/logo.png" class="site-logo-img animated fadeInDown" alt="Ben's Coding Blog">
+      </a>
+    
+    
+    
+      
+        <div class="site-title animated fadeIn"><a href="/">Ben's Coding Blog</a></div>
+      
+      <p class="site-description animated fadeIn" itemprop="description">A developer portfolio and coding blog made by Ben Brady</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">Pattern - Conditional Towers
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><div class="author-info">
+    <time class="page-date dt-published" datetime="2022-10-18T00:00:00+01:00"><a class="u-url" href="">October 18, 2022</a>
+</time>
+
+  </div>
+</div>
+
+        
+
+        
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>A common pattern in code is the use of a conditional tower to isolate an selection process into it’s own function.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_tax_rate</span><span class="p">(</span><span class="n">income</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">income</span> <span class="o">&lt;</span> <span class="mi">12_570</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="n">income</span> <span class="o">&lt;</span> <span class="mi">50_270</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">20</span>
+    <span class="k">elif</span> <span class="n">income</span> <span class="o">&lt;</span> <span class="mi">150_000</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">40</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">50</span>
+</code></pre></div></div>
+
+<p>A conditional tower allows you extract a selection process into a single function so that it can be seperated from the rest of your code.</p>
+
+<p>However, doing this with a switch statement is ill-advised at the same result could easily be accomplished with a table lookup:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">switch_version</span><span class="p">(</span><span class="nx">code</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="nx">code</span><span class="p">){</span>
+        <span class="k">case</span> <span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="k">case</span> <span class="dl">"</span><span class="s2">B</span><span class="dl">"</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">20</span><span class="p">;</span>
+        <span class="k">case</span> <span class="dl">"</span><span class="s2">C</span><span class="dl">"</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">30</span><span class="p">;</span>
+        <span class="k">case</span> <span class="dl">"</span><span class="s2">D</span><span class="dl">"</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">40</span><span class="p">;</span>
+        <span class="nl">default</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>However, the same behaviour can be achieved with less code using a table lookup, although this can make shorter functions harder to read, with larger lookups it</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">lookup_version</span><span class="p">(</span><span class="nx">code</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">LOOKUP</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">B</span><span class="dl">"</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">C</span><span class="dl">"</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">D</span><span class="dl">"</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">E</span><span class="dl">"</span><span class="p">:</span> <span class="mi">55</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">F</span><span class="dl">"</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">G</span><span class="dl">"</span><span class="p">:</span> <span class="mi">64</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">H</span><span class="dl">"</span><span class="p">:</span> <span class="mi">74</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">I</span><span class="dl">"</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">LOOKUP</span><span class="p">[</span><span class="nx">code</span><span class="p">]</span> <span class="o">??</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+        </div>
+
+        
+          <div class="page-share">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FConditional-Towers%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Pattern+-+Conditional+Towers%20http%3A%2F%2Flocalhost%3A4000%2FConditional-Towers%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2FConditional-Towers%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <a href="https://reddit.com/submit?title=Pattern+-+Conditional+Towers&url=http%3A%2F%2Flocalhost%3A4000%2FConditional-Towers%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a>
+</div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/An-Ode-To-Try-Except-Else/">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> An Ode to Try Except Else
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/Function-Length-Trade-Offs/">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Function Length Trade-Offs
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="copyright">
+    
+      <p>&copy; 2022 Ben's Coding Blog. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+  </body>
+
+</html>
