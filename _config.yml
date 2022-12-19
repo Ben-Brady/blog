@@ -18,8 +18,8 @@ locale: "en-us"
 email: benbradybusiness@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Software Engineer
-baseurl: "/blog" # the subpath of your site, e.g. /blog
-url: "https://ben-brady.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "https://hireme.contact" # the base hostname & protocol for your site, e.g. http://example.com
 logo: "/images/logo.png"
 twitter:
   username: Ben-Brady # site's Twitter username
@@ -31,7 +31,7 @@ plugins:
   - jekyll-feed
 
 permalink: /:categories/:title/
-skin: "/assets/css/skins/dark.css"
+skin: "/assets/css/skins/default.css"
 search_full_content: false
 
 collections:
