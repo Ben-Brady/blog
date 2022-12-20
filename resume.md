@@ -6,7 +6,7 @@ date:   2022-10-18 +0000
 
 [Curriculum vitae](./assets/Resume.pdf)
 
-## Python
+<!-- ## Python
 
 I've been programming python for the past 4 years, I have thorogh knowledge of all aspects of the language as well as best practices. I'm familiar with many of the built-in libraries as well as many popular ones such as OpenCV, numpy, pillow.
 
@@ -16,7 +16,7 @@ As well as light experience with using svelte
 
 ### Open Booru  - <https://openbooru.org>
 
-Open Booru is a project I've been working on since November. It's currently hosted at
+Open Booru is a project I've been working on since November. It's currently hosted at -->
 
 ## Education
 
