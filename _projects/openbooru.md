@@ -1,10 +1,10 @@
 ---
 title: "Openbooru"
-date: 2021-11-27 +0000
+date: 2021-10-27 +0000
 image: 
   path: /images/openbooru.png
   thumbnail: /images/openbooru.png
-  caption: "Site layout"
+  caption: "Openbooru"
 ---
 
 [Openbooru](https://ptr.openbooru.org) is a modern implementation of a booru written in Sveltekit and Python.
