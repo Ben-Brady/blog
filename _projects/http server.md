@@ -7,6 +7,8 @@ image:
   caption: "HTTP/1.1 Server"
 ---
 
-I wanted to understand HTTP/1.1 so I reimplemented it in python.
+A RFC compliant HTTP/1.1 implementation in python.
 
-After watching James Kettle's amazing research on http desync attacks, I realised that in order to fully understand it I how HTTP/1.1 works and the best way to do that is to implement it. Doing this helped me to understand that there very little serpeartion between HTTP/1.1 requests traveling down the same connection.
+After watching James Kettle's amazing research on http desync attacks, I realised how vulnerable over the wire HTTP can be. I decided that if I wanted to fully explore it and find possible areas of attack, I needed to implement it. That way I'd be forced to understand how HTTP/1.1 works and where possible areas of attack would be. It also helped me to gain more understand on how sockets worked.
+
+Originally, I had planned to implement it in Rust as way to learn that more, however the development was too slow
