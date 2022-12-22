@@ -2,7 +2,7 @@
 title: "Pureimage"
 date: 2021-06-02 +0000
 image: 
-  path: /images/pureimage.png
+  path: /images/pureimage-demo.png
   thumbnail: /images/pureimage.png
   caption: "Pureimage"
 ---
