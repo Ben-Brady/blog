@@ -7,7 +7,7 @@ image:
   caption: "Openbooru"
 ---
 
-[Openbooru](https://ptr.openbooru.org) is a modern implementation of a booru written in Sveltekit and Python.
+[Openbooru](https://openbooru.org) is a modern implementation of a booru written in Sveltekit and Python.
 
 I orinally wanted to create a modern framework for boorus. A booru is a imageboard that can be searched with through tags, this is often used to showcase [Fan-art](https://booru.newblood.games/post/list). In the mid-2000s, the competition in this area was very fierce, however over time the most frameworks are based on old design practices or have become overcome with technical debt.
 
