@@ -8,7 +8,7 @@ One of the project that I hope to undertake soon is writing a simple programing 
 
 ## Scope
 - Variables/Literals `let a = 1`
-- Integers, Booloean
+- Integers, Boolean
 - if/else
 - comparison operators: `== != > >= < <=`
 - boolean operators: `|| && !`
@@ -34,7 +34,7 @@ if a ** 2 == 4 {
 - if statement
 	- condition
 		- binary operator
-			- op: `comparsion`
+			- op: `comparison`
 			- a
 				- binary operator
 					- a
